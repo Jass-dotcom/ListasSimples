@@ -1,18 +1,6 @@
 package nodos;
 
-import java.util.Scanner;
-
-class Nodo {
-    int dato;
-    Nodo siguiente;
-    
-    public Nodo(int dato) {
-        this.dato = dato;
-        this.siguiente = null;
-    }
-}
-
-public class ListaEnlazada {
+class ListaEnlazada {
     private Nodo cabeza;
     
     public ListaEnlazada() {
@@ -98,56 +86,5 @@ public class ListaEnlazada {
             actual = actual.siguiente;
         }
         System.out.println();
-    }
-    
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ListaEnlazada lista = new ListaEnlazada();
-        int opcion;
-        
-        do {
-            System.out.println("\n1. Insertar al inicio");
-            System.out.println("2. Eliminar del inicio");
-            System.out.println("3. Insertar al final");
-            System.out.println("4. Eliminar del final");
-            System.out.println("5. Eliminar del medio");
-            System.out.println("6. Mostrar lista");
-            System.out.println("7. Salir");
-            System.out.print("Opcion: ");
-            
-            opcion = sc.nextInt();
-            
-            switch (opcion) {
-                case 1:
-                    System.out.print("Dato: ");
-                    int dato1 = sc.nextInt();
-                    lista.insertarInicio(dato1);
-                    break;
-                case 2:
-                    lista.eliminarInicio();
-                    break;
-                case 3:
-                    System.out.print("Dato: ");
-                    int dato3 = sc.nextInt();
-                    lista.insertarFinal(dato3);
-                    break;
-                case 4:
-                    lista.eliminarFinal();
-                    break;
-                case 5:
-                    lista.eliminarMitad();
-                    break;
-                case 6:
-                    lista.mostrar();
-                    break;
-                case 7:
-                    System.out.println("Saliendo...");
-                    break;
-                default:
-                    System.out.println("Opcion no valida");
-            }
-        } while (opcion != 7);
-        
-        sc.close();
     }
 }
